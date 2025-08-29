@@ -8,94 +8,101 @@
 
 <ion-content [fullscreen]="true">
  <form [formGroup]="addTask">
-    <ion-list>
-      <ion-item>
-        <ion-input
+    <div class="input-container">
+      <ion-input
         type="text"
         label="Title"
         labelPlacement="floating"
         placeholder="Enter Task Title"
         name="title"
         formControlName="title"
-        ></ion-input>
-      </ion-item>
+        class="custom-input"
+      ></ion-input>
+    </div>
 
-      <ion-item>
-        <ion-textarea
+    <div class="input-container">
+      <ion-textarea
         label="Description"
         labelPlacement="floating"
         placeholder="Enter Task Description"
         name="description"
         formControlName="description"
-        ></ion-textarea>
-      </ion-item>
+        class="custom-input"
+      ></ion-textarea>
+    </div>
 
-      <ion-item>
-        <ion-select
+    <div class="input-container">
+      <ion-select
         label="Category"
         labelPlacement="floating"
         name="category"
         formControlName="category"
         interface="popover"
-        >
-      <ion-select-option value="Work">Work</ion-select-option>
-      <ion-select-option value="Personal">Personal</ion-select-option>
-      <ion-select-option value="Home">Home</ion-select-option>
-      <ion-select-option value="Shopping">Shopping</ion-select-option>
-      <ion-select-option value="Fitness">Fitness</ion-select-option>
-      <ion-select-option value="Errands">Errands</ion-select-option>
-      <ion-select-option value="Travel">Travel</ion-select-option>
-      <ion-select-option value="Finance">Finance</ion-select-option>
+        class="custom-input"
+      >
+        <ion-select-option value="Work">Work</ion-select-option>
+        <ion-select-option value="Personal">Personal</ion-select-option>
+        <ion-select-option value="Home">Home</ion-select-option>
+        <ion-select-option value="Shopping">Shopping</ion-select-option>
+        <ion-select-option value="Fitness">Fitness</ion-select-option>
+        <ion-select-option value="Errands">Errands</ion-select-option>
+        <ion-select-option value="Travel">Travel</ion-select-option>
+        <ion-select-option value="Finance">Finance</ion-select-option>
       </ion-select>
-      </ion-item>
+    </div>
 
-      <ion-item>
-        <ion-input
-          label="Due Date"
-          labelPlacement="floating"
-          formControlName="dueDate"
-          type="datetime-local"
-        ></ion-input>
-      </ion-item>
+    <div class="input-container">
+      <ion-input
+        label="Due Date"
+        labelPlacement="floating"
+        formControlName="dueDate"
+        type="datetime-local"
+        class="custom-input"
+      ></ion-input>
+    </div>
 
-      <ion-item>
-        <ion-select
+    <div class="input-container">
+      <ion-select
         label="Priority"
         labelPlacement="floating"
         name="priority"
         formControlName="priority"
         interface="popover"
-        >
-      <ion-select-option value="Low">Low</ion-select-option>
-      <ion-select-option value="Medium">Medium</ion-select-option>
-      <ion-select-option value="High">High</ion-select-option>
+        class="custom-input"
+      >
+        <ion-select-option value="Low">Low</ion-select-option>
+        <ion-select-option value="Medium">Medium</ion-select-option>
+        <ion-select-option value="High">High</ion-select-option>
       </ion-select>
-      </ion-item>
+    </div>
 
-      <ion-item>
-        <ion-select
+    <div class="input-container">
+      <ion-select
         label="Progress"
         labelPlacement="floating"
         name="progress"
         formControlName="progress"
         interface="popover"
-        >
-          <ion-select-option value="Open">Open</ion-select-option>
-          <ion-select-option value="In Progress">In Progress</ion-select-option>
-          <ion-select-option value="Completed">Completed</ion-select-option>
-          <ion-select-option value="Deferred">Deferred</ion-select-option>
-          <ion-select-option value="Reopened">Reopened</ion-select-option>
-        </ion-select>
-      </ion-item>
+        class="custom-input"
+      >
+        <ion-select-option value="Open">Open</ion-select-option>
+        <ion-select-option value="In Progress">In Progress</ion-select-option>
+        <ion-select-option value="Completed">Completed</ion-select-option>
+        <ion-select-option value="Deferred">Deferred</ion-select-option>
+        <ion-select-option value="Reopened">Reopened</ion-select-option>
+      </ion-select>
+    </div>
 
-      <ion-item>
-        <ion-buttons slot="start">
-          <ion-button color="danger" (click)="closeForm()">Cancel</ion-button>
-        </ion-buttons>
-        <ion-buttons slot="end">
-          <ion-button color="success" (click)="onSubmit()" [disabled]="addTask.invalid">Save</ion-button>
-        </ion-buttons>
-      </ion-item>
-    </ion-list>
+    <div class="input-container">
+      <ion-button fill="outline" color="medium" class="attachment-button" (click)="takePicture()">
+        <ion-icon name="camera" slot="start"></ion-icon>
+        Add Attachments
+      </ion-button>
+    </div>
+
+    <div class="button-container">
+      <ion-button color="danger" (click)="closeForm()">Cancel</ion-button>
+      <ion-button color="success" (click)="onSubmit()" [disabled]="addTask.invalid">Save</ion-button>
+    </div>
  </form>
 </ion-content>
